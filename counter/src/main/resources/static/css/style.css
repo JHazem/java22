@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+.container{
+	margin:40px;
+	padding: 40px;
+	font-family: sans-serif;
+	background-color: lightgray;
+}
+
+h1{
+	color: Blue;
+	margin: 10% 10% 20% 40% ;
+}
+
+.table{
+	background-color: white;
+}
+
+.test{
+		color: Blue;
+	margin: 5% 2% 2% 45%;
+}

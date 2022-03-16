@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+.container{
+	margin:40px;
+	padding: 40px;
+	font-family: sans-serif;
+	background-color: lightgray;
+}
+
+h1{
+	color: lightpink;
+	margin: 5%;
+}
+
+.table{
+	background-color: white;
+}

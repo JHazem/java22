@@ -51,6 +51,7 @@ public class PlaceController {
 	        
  	         List<Place>  places = placeService.allPlaces();  //Search  
  	         model.addAttribute("myPlace", places);
+ 	         
  	         if(session.getAttribute("city") !=null) {     
  	        	  String keyword = (String)session.getAttribute("city");   
 	        	  model.addAttribute("places",placeService.findUserPlace(keyword)); 
@@ -74,8 +75,8 @@ public class PlaceController {
 		Place place = placeService.findPlace(placeId); 
 		model.addAttribute("place",place);
 		model.addAttribute("stories", place.getStories()); // to get all stories in specific city
-		
-		System.out.println(place.getStories());
+	
+//		System.out.println(place.getStories());
 		return "detailplace.jsp";
 	}
 	
@@ -136,16 +137,13 @@ public class PlaceController {
 		      return "redirect:/places";
 		  }
 		
- 
-		
+  
 		//Search 
 		@PostMapping("/user/place_search")
 		public String placeSearch(Model model,HttpSession session, @RequestParam("freeText") String freeText) {
 			  
 			if(freeText == "") {
-				return "redirect:/places";
-				
-			
+				return "redirect:/places"; 
 			}
 			session.setAttribute("city", freeText);
 			return "redirect:/places";

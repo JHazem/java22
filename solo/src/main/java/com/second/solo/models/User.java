@@ -17,6 +17,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+ 
 
  
 @Entity
@@ -59,6 +60,10 @@ public class User {
     @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
 	private List<Place> places;
 
+	 @OneToMany(mappedBy="user", fetch = FetchType.LAZY) 
+	 private List<Comment> comments;
+	 
+	 
     @PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
@@ -131,6 +136,14 @@ public class User {
 
 	public void setPlaces(List<Place> places) {
 		this.places = places;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
  
      

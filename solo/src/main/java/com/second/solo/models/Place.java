@@ -14,8 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-import javax.persistence.Table;
+import javax.persistence.Table; 
 import javax.validation.constraints.NotBlank;
+ 
 
 @Entity
 @Table(name="places")
@@ -26,8 +27,7 @@ public class Place {
     private Long id;
     
     @NotBlank(message="  Name is required!")
-    @Column(unique=true)
-    
+    @Column(unique=true) 
 //    @Unique(message="The place already existing")
     private String placeName;  
     
@@ -51,7 +51,8 @@ public class Place {
 	 // One to many Link to story
 	 @OneToMany(mappedBy="myplace", fetch = FetchType.LAZY)
 	 private List<Story> stories;
-	 
+	  
+
  	 @PrePersist
  	 protected void onCreate(){
         this.createdAt = new Date();

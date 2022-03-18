@@ -17,11 +17,12 @@
 </br> 
 <div class="container">
 
-	<h1>Create a Place</h1>
 	
-		 <a href="/home" class="btn btn-primary">Home</a> 
-		 <a href="/places" class="btn btn-primary">Back  </a> 
-		 <a href="/logout" class="btn btn-primary">logout</a> 
+	 <a href="/home" class="btn btn-primary">Home</a> 
+	 <a href="/places" class="btn btn-primary">Back  </a> 
+	 <a href="/logout" class="btn btn-primary">logout</a> 
+	 
+	<h3 style = "position:relative; left:350px; top:2px;">Create a Place</h3>
 	
 	<div class="container">
 		<form:form action="/places" modelAttribute="addNewPlace" class="form" method="post">
@@ -45,11 +46,12 @@
 				<form:errors path="content" class="error"/>
 				<form:input  path="content" type="text" class="form-control"/>
 			</div></br>
-			<div>
+			
+			<!-- <div>
 				  <label for="postedDate">posted Date:</label>
 				  <input type="date" id="birthday" name="postedDate">
 				  
-				</div></br>
+				</div></br> -->
 				 
 			<div>
 				 <a href="/places" class="btn btn-primary">Cancel</a>

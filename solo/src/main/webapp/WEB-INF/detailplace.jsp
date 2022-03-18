@@ -53,38 +53,31 @@
 	                     <!-- To fill information inside the table -->
 	            
 	            <tr>  
-	                <td><c:out value="${story.id}"/></td>
+	               	 <td><c:out value="${story.id}"/></td>
   	                 <td> <a href="/stories/${story.id}"><c:out value="${story.title}"/></a></td> 
-  	                <%-- <td> <a href="/stories/${place.placeName}"><c:out value="${place.placeName}"/></a></td> --%> 
-  	                <td>  ${story.title} </td> 
-  	             
-  	                <td>  ${story.content} </td>  
-	                 
-	                 <td>
- 		                 <a href="/stories/delete/<c:out value="${story.id}"/>" >Delete</a> 
-	             	    <a href="/stories/${story.id}/edit" style = "position:relative; left:20px; top:2px;"> edit</a> 
-   	                </td>  
-			            
-	           	 </tr>
-	             
+  	                 
+  	                 <td>  ${story.content} </td>
+  	                   
+  	          <!-- 
+  					 <td>
+  	                     <c:choose>
+	  	                 	<c:when test="${story.user.id == user.id}">
+	  	                 		 <td> <a href="/stories/delete/<c:out value="${story.id}"/>" >Delete</a> 
+		                   	   	  <a href="/stories/${story.id}/edit" style = "position:relative; left:30px; top:2px;"> Edit</a> 
+		                		</td> 
+	  	                 	</c:when> 
+  	               		  <c:otherwise></c:otherwise>
+  	                	 </c:choose> 
+        			 </td>
+	    	  -->
+	            </tr>
 	            </c:forEach>
 	     
 	         </tbody>
  	      
 	     </table>
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-  	 	  <div >
-		 
-			
-			 <a href="/places/delete/<c:out value="${place.id}"/>" class="btn btn-primary">Delete</a> 
-			<a href="/places/${place.id}/edit" class="btn btn-primary"> edit</a> 
-		 </div>
+			  
+  
 	</div> 
  
 </body>

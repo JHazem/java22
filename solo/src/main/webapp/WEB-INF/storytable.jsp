@@ -45,7 +45,7 @@
 		               <th>Id</th>
 		              <th>Title</th> 
 		              <th>Content</th> 
-		              <th>Actions</th>
+ 		              <th>Actions</th>
 	            </tr>
 	        </thead>
 	     		 <!-- Body of table -->
@@ -58,10 +58,16 @@
 	                <td><c:out value="${story.id}"/></td>
  	               	<td> <a href="/stories/${story.id}"><c:out value="${story.title}"/></a></td> 
  	                <td><c:out value="${story.content}"/></td> 
-	                 <td>
-		                  <a href="/stories/delete/<c:out value="${story.id}"/>" >Delete</a> 
-                   	    <a href="/stories/${story.id}/edit" style = "position:relative; left:30px; top:2px;"> View</a> 
-	                </td>  
+ 	                <!-- choose c:choose when the other wise if session user id == story creater id other wise show the button-->
+  	                 <c:choose>
+  	                 	<c:when test="${story.user.id == user.id}">
+  	                 		 <td> <a href="/stories/delete/<c:out value="${story.id}"/>" >Delete</a> 
+	                   	   	  <a href="/stories/${story.id}/edit" style = "position:relative; left:30px; top:2px;"> Edit</a> 
+	                		</td> 
+  	                 	</c:when> 
+  	               		  <c:otherwise></c:otherwise>
+  	                 </c:choose>
+  	                 
 			            
 	           	 </tr>
 	             

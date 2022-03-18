@@ -15,11 +15,11 @@
 </head>
 <body>
 
-<div class="container">
-	<h1>Edit Place</h1> 
-	  		  <a href="/home" class="btn btn-primary"> Home </a> 
-	
+<div class="container"></br>
+	 <a href="/home" class="btn btn-primary"> Home </a> 
 	 <a href="/places" class="btn btn-primary">Back</a> 
+	 
+	<h1  style = "position:relative; left:35%; top:2px;">Edit Place</h1> 
 
 	<div class="container">
 	<form:form action="/places/${place.id}" modelAttribute="place" class="form" method="post">
@@ -31,7 +31,7 @@
 			<div class="form-row">
 				<form:label  path="placeName" for="placeName">Place Name:</form:label>
 			 	<form:errors path="placeName" class="error"/>
-				<form:input  path="placeName" type="text" class="form-control" />
+				<form:input  path="placeName" type="text" class="form-control"  />
 			</div>
 			
 			<div class="form-row">
@@ -45,18 +45,20 @@
 			<div class="form-row">
 				<form:label  path="content" for="content"> Content:</form:label>
 				<form:errors path="content" class="error"/>
-				<form:input  path="content" type="text" class="form-control" readonly="true"/>
+				<form:input  path="content" type="text" class="form-control" />
 			</div></br>
 			
 
-				<div>
+				<!-- <div>
 				  <label for="postedDate">Due Date:</label>
 				  <input type="date" id="birthday" name="postedDate">
 				  
-				</div>	</br>
+				</div>	</br> -->
 				<div>
 				<input type="submit" value="submit"  class="btn btn-primary">
 			</div>
+			
+			
 			 </form:form>
 	</div>
 

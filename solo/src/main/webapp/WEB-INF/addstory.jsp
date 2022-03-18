@@ -17,11 +17,11 @@
 </br> 
 <div class="container">
 
-	<h1>Create an Story</h1>
 	
 		 <a href="/home" class="btn btn-primary"> Home </a> 
-		 <a href="/logout" class="btn btn-primary">logout</a> 
 	 <a href="/stories" class="btn btn-primary">Back </a> 
+		 <a href="/logout" style = "position:relative; left:60%; top:2px;" class="btn btn-primary">logout</a> 
+	<h1  style = "position:relative; left:35%; top:2px;">Create new Story</h1>
 	<div class="container">
 		<form:form action="/stories" modelAttribute="addNewStory" class="form" method="post">
 			<form:hidden path="user" value= "${thisUser.id}"/>

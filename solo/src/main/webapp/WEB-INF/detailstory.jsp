@@ -14,27 +14,63 @@
 
 </head>
 <body>
-</br> 
-<div class="container">
+
+	<div class="container">
 
 		<div class="container"></br>
   		  <a href="/home" class="btn btn-primary"> Home </a>  
-		 <a href="/stories" class="btn btn-primary">Back </a></br></br> 
-			<h3>Story Detail</h3>
-			  	<hr style="width:50%;text-align:left;margin-left:0"></br>
+		 <a href="/stories" class="btn btn-primary">Back </a> 
+		 <a href="/logout"  style = "position:relative; left:60%; top:2px;" class="btn btn-primary">logout</a></br>
+			<h3  style = "position:relative; left:40%; top:2px;">Story Detail</h3>
+			  	<hr style="width:50%;text-align:left;margin-left:0"> 
 			
 		   	<h3> Title: <c:out value="${story.title}"/> </h3> 
-		   	  	<hr style="width:50%;text-align:left;margin-left:0"></br>
+		   	  	<hr style="width:50%;text-align:left;margin-left:0"> 
 		   	
-		   	<h3>Comment: ${story.content} </h3> </br></br>
-	 
-		
-			 
-			
-			 <a href="/stories/delete/<c:out value="${story.id}"/>" class="btn btn-primary">Delete</a> 
-			 <a href="/stories/${story.id}/edit" class="btn btn-primary"> edit</a> 
-		 </div>
-	</div> 
-	
+		   	<h3>Content: ${story.content} </h3> </br> 
+	   
+
+									<!-- if user create a story can be edit or delete -->
+			   <c:choose>
+  	                 	<c:when test="${story.user.id == user}">
+  	                 		 <td> <a href="/stories/delete/<c:out value="${story.id}" />" class="btn btn-primary">Delete</a> 
+	                   	   	  <a href="/stories/${story.id}/edit"  class="btn btn-primary"> Edit</a> 
+	                		</td> 
+  	                 	</c:when> 
+ 	               		  <c:otherwise></c:otherwise>
+              	 </c:choose>  	</br> 	
+              	 
+              	  
+				 	 				<!-- add comment -->
+		 	<div > 
+				<form:form action="/mystories/${story.id}" method="post" modelAttribute="commentObject">
+					<p>
+						<form:label path="comment">Add your Comment: </form:label>
+						<form:textarea path="comment" type="text" />
+						<form:errors path="comment" />
+					   <%-- <input type="hidden" name="story" value="${mystory.id}">  --%>
+					   
+					   <!-- two hidden button one for session id and other for story id -->
+					   <form:hidden path="story"   value= "${story.id}"/>
+					   <form:hidden path="user"  value= "${user}"/>
+					     
+					      
+					</p>  
+						<input type="submit" value="Comment" />
+					   
+  	                     
+        		 
+				</form:form>
+		 	
+		 	<hr />
+				  	 <!-- To see all comments -->
+              	 
+              	 <c:forEach items="${story.comments}" var="comment"> 
+              	 	<p>${comment.comment}</p>
+              	 
+              	 </c:forEach>
+              	 
+		  </div> 
+	 </div>	
 </body>
 </html>

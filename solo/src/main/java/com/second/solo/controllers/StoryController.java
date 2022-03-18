@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.second.solo.models.Comment;
 import com.second.solo.models.Place;
 import com.second.solo.models.Story;
 import com.second.solo.models.User;
@@ -71,11 +72,16 @@ public class StoryController {
     //2
     @GetMapping("/stories/{storyId}")
 	public String sStory (Model model,
-							@PathVariable("storyId") Long storyId) {
+							@PathVariable("storyId") Long storyId,
+							@ModelAttribute("commentObject") Comment comment,
+							HttpSession session) {
 		
 		Story story = storyService.findStory(storyId);
 		model.addAttribute("story",story);
-
+		
+		// add session variable  
+		model.addAttribute("user", session.getAttribute("userId"));
+		
 		return "detailstory.jsp";
 	}
 	 
@@ -84,9 +90,11 @@ public class StoryController {
 	@GetMapping("/stories/new")
 	public String newStory(@ModelAttribute("addNewStory") Story story,HttpSession session,Model model) {
 		 List<Place> joinPlaces = placeService.allPlaces();
-		 model.addAttribute("places", joinPlaces);// for add place as a down arrow
+		
+		  model.addAttribute("places", joinPlaces);// for add place as a down arrow
 		  Long id = (Long)session.getAttribute("userId");
 		  User thisUser = userService.findById(id);
+		  
 		  model.addAttribute("place", joinPlaces);
 		  model.addAttribute("thisUser",  thisUser);
 		return "addstory.jsp";
@@ -134,10 +142,7 @@ public class StoryController {
 		storyService.deleteStory(id);
 	      return "redirect:/stories";
 	  }
-	
- 
-	
-
+	 
 	
 	//Search 
 	@PostMapping("/user/story_search")

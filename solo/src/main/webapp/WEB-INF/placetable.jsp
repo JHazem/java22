@@ -65,12 +65,21 @@
   	             
   	                <td>  ${place.content} </td>  
 	                 
-	                 <td>
+	                 <%-- <td>
  		                 <a href="/places/delete/<c:out value="${place.id}"/>">Delete</a> 
 	             	    <a href="/places/${place.id}/edit" style = "position:relative; left:20px; top:2px;"> edit</a> 
 	             	     <a href="https://www.google.com/maps/place/${place.placeName}" style = "position:relative; left:30px; top:2px;">Visit City</a> 
-   	                </td>  
+   	                </td>  --%> 
 			            
+			            <c:choose>
+  	                 	<c:when test="${place.user.id == user.id}">
+  	                 		 <td> <a href="/places/delete/<c:out value="${place.id}"/>" >Delete</a>  
+	                   	   	  <a href="/places/${place.id}/edit" style = "position:relative; left:30px; top:2px;"> Edit</a> </td>
+	                		</td> 
+  	                 	</c:when> 
+  	               		  <c:otherwise></c:otherwise>
+  	                 </c:choose>
+  	                 
 	           	 </tr>
 	             
 	            </c:forEach>

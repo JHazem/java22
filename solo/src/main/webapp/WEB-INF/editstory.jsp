@@ -16,29 +16,27 @@
 <body>
 </br> 
 <div class="container">
-	  		 <a href="/home" class="btn btn-primary"> Home </a> 
+     <a href="/home" class="btn btn-primary"> Home </a> 
 	
 	 <a href="/stories" class="btn btn-primary">Back </a> </br></br>
-	<h1 style = "position:relative; left:350px; top:2px;">  ${story.title}  </h1> 
+	<h1 style = "position:relative; left:350px; top:2px;"> Edit ${story.title}  </h1> 
 
 	<div class="container">
 	<form:form action="/stories/${story.id}" modelAttribute="story" class="form" method="post">
-			<form:hidden path="user"  name="_method" value="${story.user.id}"/>
-			
-			<%-- <form:hidden value="${story.user.id}" path="user"/> --%>
-			<%-- <c:out value="${error}"/> --%>
+			<form:hidden path="user" value="${story.user.id}"/>
+			 
 			
 			<div class="form-row">
 				<form:label  path="title" for="title">Title:</form:label>
 			 	<form:errors path="title" class="error"/>
-				<form:input  path="title" type="text" class="form-control" readonly="true"/>
+				<form:input  path="title" type="text" class="form-control"/>
 			</div>
  
 			
 			<div class="form-row">
 				<form:label  path="content" for="content"> Content:</form:label>
 				<form:errors path="content" class="error"/>
-				<form:input  path="content" type="textbox" class="form-control"  />
+				<form:input  path="content" type="textbox" class="form-control"/>
 			</div></br>
 			
 				<div>
@@ -46,12 +44,13 @@
 				  <input type="date" id="birthday" name="posted" >
 				  
 				</div>	</br>
-				<div>
+				  <div>
 				<input type="submit" value="submit" class="btn btn-primary">
-			</div>
+			</div>  
 			 </form:form>
-	</div>
-
+	</div> 
 </div>
+
+
 </body>
 </html>

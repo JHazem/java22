@@ -71,7 +71,7 @@ public class StoryController {
 	
     //2
     @GetMapping("/stories/{storyId}")
-	public String sStory (Model model,
+	public String addStory (Model model,
 							@PathVariable("storyId") Long storyId,
 							@ModelAttribute("commentObject") Comment comment,
 							HttpSession session) {
@@ -103,7 +103,7 @@ public class StoryController {
   		
 	//2  CODE TO MAKE A NEW user AND SAVE TO THE DB  1
 	@PostMapping("/stories")
-	public String addStory(@Valid @ModelAttribute("story") Story story,
+	public String addStory(@Valid @ModelAttribute("addNewStory") Story story,
 							 	BindingResult result) {
 		if(result.hasErrors()) {
 			return "addstory.jsp";
@@ -125,15 +125,15 @@ public class StoryController {
 	
 
 	//6
-	@PostMapping("/stories/{id}")
-	   public String updateStory(@Valid @ModelAttribute("story") Story story, BindingResult result) {
-	       if (result.hasErrors()) {
-	           return "editstory.jsp";
-	       } else { 
-	           storyService.saveStory(story);
-	           return "redirect:/stories";
-	       }
-	   }
+//	@PostMapping("/stories/{id}")
+//	   public String updateStory(@Valid @ModelAttribute("story") Story story, BindingResult result) {
+//	       if (result.hasErrors()) {
+//	           return "editstory.jsp";
+//	       } else { 
+//	           storyService.saveStory(story);
+//	           return "redirect:/stories";
+//	       }
+//	   }
 	
 	
 	//delete

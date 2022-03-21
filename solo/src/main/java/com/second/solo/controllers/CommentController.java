@@ -19,9 +19,8 @@ public class CommentController {
 	private CommentService commentService;
 
 	
-	@PostMapping("/mystories/{id}")
-	public String addComment(@Valid @ModelAttribute
-			("commentObject") Comment comment,
+	@PostMapping("/addcomment/{id}")
+	public String addComment(@Valid @ModelAttribute ("commentObject") Comment comment,
 			 BindingResult result,@PathVariable("id") Long id){
 
 
@@ -30,16 +29,13 @@ public class CommentController {
 		}else {
 			 
 		System.out.println("*****");
+		
 		commentService.createComment(comment);
 		//Long commId = comment .getStory().getId();
 		return "redirect:/stories/{id}";
 		}
 	}
 	
-
-	
-	
-	
-	
+  
 
 }

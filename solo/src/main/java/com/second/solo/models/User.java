@@ -41,13 +41,13 @@ public class User {
 	
     //p
     @NotEmpty(message="Password is required!")
-    @Size(min=2, max=200, message="Password must be between 8 and 128 characters")
+    @Size(min=2, max=200, message="Password must be between 3 and 128 characters")
     private String password;
     
     //p
     @Transient  
     @NotEmpty(message="Confirm Password is required!")
-    @Size(min=2, max=200, message="Confirm Password must be between 8 and 128 characters")
+    @Size(min=2, max=200, message="Confirm Password must be between 3 and 128 characters")
     private String passCodeConfirm;
     
 	@Column(updatable=false)

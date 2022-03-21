@@ -27,7 +27,7 @@
 	
 										<!-- Search box -->
 	
-	 	 <div><h3  style = "position:relative; left:35%; top:2px;">Places Table</h3></div></br> 
+	 	 <div><h3  style = "position:relative; left:35%; top:2px; color:red">Places Table</h3></div></br> 
 
          
          

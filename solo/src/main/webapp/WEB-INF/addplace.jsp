@@ -22,7 +22,7 @@
 	 <a href="/places" class="btn btn-primary">Back  </a> 
 	 <a href="/logout" class="btn btn-primary">logout</a> 
 	 
-	<h3 style = "position:relative; left:350px; top:2px;">Create a Place</h3>
+	<h3 style = "position:relative; left:350px; top:2px; color:red">Create a Place</h3>
 	
 	<div class="container">
 		<form:form action="/places" modelAttribute="addNewPlace" class="form" method="post">

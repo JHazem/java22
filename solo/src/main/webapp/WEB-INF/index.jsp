@@ -13,15 +13,15 @@
 </head>
 <body>
 
-<div class="container"> 
-<h1> MakPidia Stories Project  </h1> 
+<div class="container"> </br>
+<h1 style = "position:relative; left:35%; top:2px; color:blue"> StoryPedia  </h1> </br>
 
 
 			<!-- Register form -->
 	
 		<div class="row"> 
 			<div class="col"> 
-				<h1>Register</h1>
+				<h1 style="color:red">Register</h1>
 				     		  	<!-- match11 -->			 			<!-- match1 -->
 				<form:form action="/registration" method="post" modelAttribute="user">
 					<div class="form-group">
@@ -67,7 +67,7 @@
 			<!-- Log in form -->
 		
 	<div class="col">		
-		<h1>Login</h1>
+		<h1 style="color:red">Login</h1>
 			<form method="post" action="/login">
 				<p class="text-dnger"></p>
 				<div class="form-group">

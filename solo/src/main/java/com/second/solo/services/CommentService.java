@@ -20,9 +20,8 @@ public class CommentService {
 	}
 
 	public Comment createComment(@Valid Comment comment) {
-
-		return commentRepo.save(comment);
 		
+		return commentRepo.save(comment);
 		
 	}
 	

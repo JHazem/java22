@@ -45,10 +45,11 @@ public class Comment {
 
 	    @ManyToOne(fetch = FetchType.LAZY)
 	    @JoinColumn(name="user_id")
-	    private User user; // change to user
+	    private User user; // change  
 	    
 		public Comment() {
 		}
+		
 		public Long getId() {
 			return id;
 		}

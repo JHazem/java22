@@ -17,12 +17,12 @@
  </br> 
 <div class="container">
   		  <a href="/home" class="btn btn-primary"> Home </a> 
-		 <a href="/places"  class="btn btn-primary">Back </a> </br>
+		 <a href="/places"  class="btn btn-primary">Back </a> 
+			 <a href="/logout"  style = "position:relative; left:70%; top:2px;" class="btn btn-primary">    logout</a> </br>
 
  
 		<div class="container"></br>
-			<h3  style = "position:relative; left:40%; top:2px;">${place.placeName} Stories</h3></br>
-			
+			<h3  style = "position:relative; left:40%; top:2px;color:red">${place.placeName} Stories</h3></br>
 			  <%--  <h3> Place: <c:out value="${place.placeName}"/> </h3> --%>
 			   
 			  

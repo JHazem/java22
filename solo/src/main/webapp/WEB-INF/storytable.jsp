@@ -22,7 +22,7 @@
 		  <a href="/logout" style = "position:relative; left:45%; top:2px;" class="btn btn-primary">   logout</a>    
 	</div></br>
 	
-	<div><h3  style = "position:relative; left:35%; top:2px;">Stories Table</h3></div></br>
+	<div><h3  style = "position:relative; left:35%; top:2px; color:red">Stories Table</h3></div></br>
 	
 	
 	

@@ -17,34 +17,24 @@
   <div class="container" > 
 		 <a href="/logout"  style = "position:relative; left:70%; top:2px;" class="btn btn-primary">    logout</a>   </br></br>
 		
- <h1 style = "position:relative; left:135px; top:2px;"> Welcome,  <c:out value="${user.name}" /> with StoryPidia from life</h1></br>
- <%--    <video width="300" controls style = "position:relative; left:22%; top:2px;">
-   <source src="camel.mp4" type = "video/mp4"> </video></br></br>
-   --%>
-   	
-  <h3 style = "position:relative; left:33%; top:2px;">What are you looking for ?</h3>
+ <h1 style = "position:relative; left:22%; top:2px; color:Green"> Welcome,  <span style="color:#FF0000 "><b><c:out value="${user.name}"/></b></span> with StoryPedia</h1></br>
+       
+  <h3 style = "position:relative; left:15%; top:2px;">Are you looking for a story in a specific place or a specific title ?</h3>
 		
-			<hr style="width:50%;text-align:left;margin-left:0; position:relative; left:23%; top:2px;""></br>
-		
-
-	 	
-	 	
-	     	 <a href="/places"  style = "position:relative; left:35%; top:2px;" class="btn btn-primary"> Place </a> 
-	     		 <a href="/stories"  style = "position:relative; left:40%; top:2px;" class="btn btn-primary">  Story  </a> 
+			<hr style="width:50%;text-align:left;margin-left:0; position:relative; left:23%; top:2px;"></br>
+		 
+	     	 <a href="/places"  style = "position:relative; left:34%; top:2px;" class="btn btn-primary"> Places Table</a> 
+	     		 <a href="/stories"  style = "position:relative; left:40%; top:2px;" class="btn btn-primary">  Stories Table</a> </br></br>
 	     
-  </div>  
-
+	     <a href="/places/new" style = "position:relative; left:23%; top:2px;" class="btn btn-primary">   Add place </a>
+	     <a href="/stories/new" style = "position:relative; left:55%; top:2px;" class="btn btn-primary">   Add Story </a>
+	     
+  </div>  <br>
+	     <video width="500" height= "300" controls style = "position:relative; left:27%; top:2px;">
+   		<source src="camel.mp4" type = "video/mp4"> </video> </br></br>
+ 		<!-- <img src="/imges/indian.jpg" alt="indian"/> --> 
+ 		 
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
+  

@@ -32,7 +32,7 @@ public class Story {
       
     @NotBlank(message="Must not be blank") 
     private String content;  
-   
+ 
    
 	 @Column(updatable=false)
 	 private Date createdAt;

@@ -11,7 +11,7 @@ public class LoginUser {
 	private String email;
 	
 	@NotEmpty(message="Password is required!")
-	@Size(min=4, max=128, message="Password must be between 4 and 128 characters")
+	@Size(min=4, max=128, message="Password must be between 3 and 128 characters")
 	private String password;
 	
 	public LoginUser() {}

@@ -21,7 +21,7 @@
   		  <a href="/home" class="btn btn-primary"> Home </a>  
 		 <a href="/stories" class="btn btn-primary">Back </a> 
 		 <a href="/logout"  style = "position:relative; left:60%; top:2px;" class="btn btn-primary">logout</a></br>
-			<h3  style = "position:relative; left:40%; top:2px;">Story Detail</h3>
+			<h3  style = "position:relative; left:40%; top:2px; color:red">Story Detail</h3>
 			  	<hr style="width:50%;text-align:left;margin-left:0"> 
 			
 		   	<h3> Title: <c:out value="${story.title}"/> </h3> 
@@ -43,7 +43,7 @@
               	  
 				 	 				<!-- add comment -->
 		 	<div > 
-				<form:form action="/mystories/${story.id}" method="post" modelAttribute="commentObject">
+				<form:form action="/addcomment/${story.id}" method="post" modelAttribute="commentObject">
 					<p>
 						<form:label path="comment">Add your Comment: </form:label>
 						<form:textarea path="comment" type="text" />
@@ -57,20 +57,27 @@
 					      
 					</p>  
 						<input type="submit" value="Comment" />
-					   
-  	                     
-        		 
+					    
 				</form:form>
 		 	
-		 	<hr />
+		 	
+		 	
+		 	
+		 		<hr />
 				  	 <!-- To see all comments -->
               	 
               	 <c:forEach items="${story.comments}" var="comment"> 
-              	 	<p>${comment.comment}</p>
-              	 
+               		<p>${comment.comment}</p>
               	 </c:forEach>
-              	 
+              	</div> 
 		  </div> 
 	 </div>	
 </body>
 </html>
+
+
+
+
+
+
+

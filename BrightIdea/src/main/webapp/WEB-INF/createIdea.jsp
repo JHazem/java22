@@ -33,11 +33,13 @@
 		</nav>
 		</div>
 		<div class="col-6 ms-4 mt-4">
-		<form:form action="/ideas/save" method="post" modelAttribute="newIdea">
+		<form:form action="/ideas/saveidea" method="post" modelAttribute="newIdea">
 			<div class="mb-3">
 				<form:label    path="idea" class="form-label">Whats your Bright Idea?</form:label>
 				<form:textarea path="idea" class="form-control" />
 				<form:errors   path="idea" class="text-danger" />
+				
+				<form:hidden   path="user"  value= "${userId}"/>
 			</div>
 			 <a href="/ideas" class="btn btn-primary">Cancel</a>
 			<button type="submit" class="btn btn-outline-primary">Submit</button>

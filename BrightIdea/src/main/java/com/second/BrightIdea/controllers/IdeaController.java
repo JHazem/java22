@@ -1,6 +1,5 @@
 package com.second.BrightIdea.controllers;
-
-import java.util.List;
+ 
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -12,8 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping; 
 
 import com.second.BrightIdea.models.Idea;
 import com.second.BrightIdea.models.User; 
@@ -70,15 +68,14 @@ public class IdeaController {
 	public String newIdea(@ModelAttribute("newIdea") Idea myIdea,
 			Model model,
 			HttpSession session) {
-		 //Long id =(Long) session.getAttribute("userId");
-		User thisuser = userService.findCurrentUser(session);
- 		model.addAttribute("thisUser", thisuser);
+		 Long id =(Long) session.getAttribute("userId");
+		model.addAttribute("userId",id);
 		return "createIdea.jsp";
 	}
 
 	
 	//2
-	@PostMapping("/ideas/save")
+	@PostMapping("/ideas/saveidea")
 	public String add(@Valid @ModelAttribute("newIdea") Idea myIdea, 
 			BindingResult result ) {
 		
@@ -87,10 +84,8 @@ public class IdeaController {
 		} else {
 			
 			ideaService.createIdea(myIdea);
-		return "redirect:/ideas";
-		}
-	
-	
+			return "redirect:/ideas/new";
+		} 
 	}
 	
 	
